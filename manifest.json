@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Gemini Whisper (Groq)",
+  "version": "1.0",
+  "description": "Usa Whisper Large V3 via Groq en Gemini Web.",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": ["https://api.groq.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://gemini.google.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "icon.png", 
+    "48": "icon.png",
+    "128": "icon.png"
+  }
+}
